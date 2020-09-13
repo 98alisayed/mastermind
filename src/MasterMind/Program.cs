@@ -36,7 +36,7 @@ namespace MasterMind
 
                 Console.WriteLine("");
                 Console.WriteLine("");
-                Console.WriteLine("Do you want to play single player or Multiplayer? Enter ( S / M )");
+                Console.WriteLine("Do you want to play Singleplayer or Multiplayer? Enter ( S / M )");
 
 
 
@@ -177,51 +177,7 @@ namespace MasterMind
                     for (int i = 0; i <= 3; i++)
                     {
                         int t = arrayA[i];
-                        switch (t)
-                        {
-                            case 1:
-                                Console.BackgroundColor = ConsoleColor.Yellow; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                            case 2:
-                                Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                            case 3:
-                                Console.BackgroundColor = ConsoleColor.Green; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                            case 4:
-                                Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                            case 5:
-                                Console.BackgroundColor = ConsoleColor.Red; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                            case 6:
-                                Console.BackgroundColor = ConsoleColor.Blue; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                            case 7:
-                                Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.White;
-                                Console.Write("   ");
-                                Console.ResetColor();
-                                Console.Write(" ");
-                                break;
-                        }
+                        colorPrint(t);
 
                     }
 
@@ -433,44 +389,44 @@ namespace MasterMind
             switch (t)
             {
                 case 1:
-                    Console.BackgroundColor = ConsoleColor.Yellow; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.Yellow; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 1 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
                 case 2:
-                    Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 2 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
                 case 3:
-                    Console.BackgroundColor = ConsoleColor.Green; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.Green; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 3 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
                 case 4:
-                    Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 4 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
                 case 5:
-                    Console.BackgroundColor = ConsoleColor.Red; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.Red; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 5 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
                 case 6:
-                    Console.BackgroundColor = ConsoleColor.Blue; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.Blue; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 6 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
                 case 7:
-                    Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.White;
-                    Console.Write("   ");
+                    Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.Black;
+                    Console.Write(" 7 ");
                     Console.ResetColor();
                     Console.Write(" ");
                     break;
