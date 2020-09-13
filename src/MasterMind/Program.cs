@@ -19,6 +19,7 @@ namespace MasterMind
             //Play again do-loop
             do
             {
+
                 bool repeat = false;
                 bool gameWon = false;
                 string gamemode;
@@ -26,7 +27,7 @@ namespace MasterMind
                 Console.WriteLine("");
 
                 graphic();
-
+                legend();
                 int x = 0;
                 int z = 1;
 
@@ -115,6 +116,7 @@ namespace MasterMind
                 Console.WriteLine("");
 
                 graphic();
+                legend();
 
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -342,6 +344,7 @@ namespace MasterMind
 
             void graphic()
             {
+
                 Console.WriteLine(@"  __  __               _____   _______   ______   _____    __  __   _____   _   _   _____  ");
                 Console.WriteLine(@" |  \/  |     /\      / ____| |__   __| |  ____| |  __ \  |  \/  | |_   _| | \ | | |  __ \ ");
                 Console.WriteLine(@" | \  / |    /  \    | (___      | |    | |__    | |__) | | \  / |   | |   |  \| | | |  | |");
@@ -356,7 +359,19 @@ namespace MasterMind
             void legend()
             {
 
-                Console.WriteLine("1: 2: 3: 4: 5: 6: ");
+                Console.Write("1: ");  colorPrint(1);
+                Console.Write("         ");
+                Console.Write("2: "); colorPrint(2);
+                Console.Write("         ");
+                Console.Write("3: "); colorPrint(3);
+                Console.Write("         ");
+                Console.Write("4: "); colorPrint(4);
+                Console.Write("         ");
+                Console.Write("5: "); colorPrint(5);
+                Console.Write("         ");
+                Console.Write("6: "); colorPrint(6);
+                Console.Write("         ");
+
 
             }
 
@@ -410,6 +425,56 @@ namespace MasterMind
 
 
 
+        }
+
+
+        public static void colorPrint(int t)
+        {
+            switch (t)
+            {
+                case 1:
+                    Console.BackgroundColor = ConsoleColor.Yellow; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+                case 2:
+                    Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+                case 3:
+                    Console.BackgroundColor = ConsoleColor.Green; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+                case 4:
+                    Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+                case 5:
+                    Console.BackgroundColor = ConsoleColor.Red; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+                case 6:
+                    Console.BackgroundColor = ConsoleColor.Blue; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+                case 7:
+                    Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("   ");
+                    Console.ResetColor();
+                    Console.Write(" ");
+                    break;
+            }
         }
 
 
