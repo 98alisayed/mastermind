@@ -21,11 +21,11 @@ namespace MasterMind
             {
                 bool repeat = false;
                 bool gameWon = false;
-
+                string gamemode;
                 Console.WriteLine("");
                 Console.WriteLine("");
 
-                graphic2();
+                graphic();
 
                 int x = 0;
                 int z = 1;
@@ -35,15 +35,42 @@ namespace MasterMind
 
                 Console.WriteLine("");
                 Console.WriteLine("");
+                Console.WriteLine("Do you want to play single player or Multiplayer? Enter ( S / M )");
+
+
 
                 // Repeat do-loop for Question Array
                 do
                 {
+
+
+
+                    gamemode = Console.ReadLine();
+
+                    switch (gamemode.ToLower())
+                    {
+                        case "s":
+                            arrayQ = Singleplayer();
+                            break;
+                        case "m":
+                            arrayQ = Multiplayer();
+                            break;
+                        default:
+                            break;
+
+
+
+
+                    }
+
+
+                    /*
+
                     Console.WriteLine("Please enter the Question colors: ");
                     int num1 = Convert.ToInt32(Console.ReadLine());
 
                     x = num1;
-
+                    
 
 
                     //Question ARRAY input
@@ -52,7 +79,7 @@ namespace MasterMind
                         arrayQ[i] = x % 10;
                         x = x / 10;
                     }
-
+                    */
 
                     //Repetation Check for Question Array
 
@@ -87,7 +114,7 @@ namespace MasterMind
                 Console.WriteLine("");
                 Console.WriteLine("");
 
-                graphic2();
+                graphic();
 
                 Console.WriteLine("");
                 Console.WriteLine("");
@@ -278,9 +305,9 @@ namespace MasterMind
 
 
 
-            Console.WriteLine("Do you want to play again? (Y/N) ?");
+                Console.WriteLine("Do you want to play again? (Y/N) ?");
 
-            string reply = Console.ReadLine().ToUpper();
+                string reply = Console.ReadLine().ToUpper();
 
                 if (reply == "Y")
                     playAgain = true;
@@ -294,7 +321,7 @@ namespace MasterMind
 
 
 
-            } while (playAgain = true); // play again do-loop END
+            } while (playAgain == true); // play again do-loop END
 
 
 
@@ -311,18 +338,9 @@ namespace MasterMind
 
 
 
-            void graphic2()
-            {
-                Console.WriteLine("  __  __               _____   _______   ______   _____    __  __   _____   _   _   _____  ");
-                Console.WriteLine(" |  \\/  |     /\\      / ____| |__   __| |  ____| |  __ \\  |  \\/  | |_   _| | \\ | | |  __ \\ ");
-                Console.WriteLine(" | \\  / |    /  \\    | (___      | |    | |__    | |__) | | \\  / |   | |   |  \\| | | |  | |");
-                Console.WriteLine(" | |\\/| |   / /\\ \\    \\___ \\     | |    |  __|   |  _  /  | |\\/| |   | |   |     | | |  | |");
-                Console.WriteLine(" | |  | |  / ____ \\   ____) |    | |    | |____  | | \\ \\  | |  | |  _| |_  | |\\  | | |__| |");
-                Console.WriteLine(" |_|  |_| /_/    \\_\\ |_____/     |_|    |______| |_|  \\_\\ |_|  |_| |_____| |_| \\_| |_____/ ");
 
-            }
 
-            void graphic3()
+            void graphic()
             {
                 Console.WriteLine(@"  __  __               _____   _______   ______   _____    __  __   _____   _   _   _____  ");
                 Console.WriteLine(@" |  \/  |     /\      / ____| |__   __| |  ____| |  __ \  |  \/  | |_   _| | \ | | |  __ \ ");
@@ -330,12 +348,73 @@ namespace MasterMind
                 Console.WriteLine(@" | |\/| |   / /\ \    \___ \     | |    |  __|   |  _  /  | |\/| |   | |   |     | | |  | |");
                 Console.WriteLine(@" | |  | |  / ____ \   ____) |    | |    | |____  | | \ \  | |  | |  _| |_  | |\  | | |__| |");
                 Console.WriteLine(@" |_|  |_| /_/    \_\ |_____/     |_|    |______| |_|  \_\ |_|  |_| |_____| |_| \_| |_____/ ");
+                Console.WriteLine("");
+
 
             }
+
+            void legend()
+            {
+
+                Console.WriteLine("1: 2: 3: 4: 5: 6: ");
+
+            }
+
+
+
+
+        }
+
+        public static int[] Multiplayer()
+        {
+            Console.WriteLine("Please enter the Question colors: ");
+            int x = Convert.ToInt32(Console.ReadLine());
+            int[] arrayQ = new int[4];
+
+            for (int i = 3; i >= 0; i--)
+            {
+                arrayQ[i] = x % 10;
+                x = x / 10;
+            }
+            return arrayQ;
+        }
+
+        public static int[] Singleplayer()
+        {
+            Console.WriteLine("Generating Random Numbers");
+
+            Random random = new Random();
+            int[] target = new int[4];
+
+            bool allFilled = false;
+            int j = 0;
+
+            while (allFilled == false)
+            {
+                int r = random.Next(1, 6);  // each digit is between 1 and 6
+
+                if (r != target[0] && r != target[1] && r != target[2] && r != target[3])
+                {
+                    target[j] = r;  // each digit is between 1 and 6
+                    j++;
+
+                }
+
+                if (target[3] != 0)
+                {
+                    allFilled = true;
+                }
+            }
+            Console.WriteLine("Random Number Generated");
+            return target;
+
 
 
         }
 
 
+
     }
+
+
 }
