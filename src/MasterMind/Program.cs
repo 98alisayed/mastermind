@@ -11,7 +11,7 @@ namespace MasterMind
         static void Main(string[] args)
         {
             Console.BufferWidth = 100;
-            //  Console.BufferHeight = 100;
+            Console.BufferHeight = 100;
             Console.SetWindowSize(Console.BufferWidth, 58);
 
             bool playAgain = false;
@@ -133,8 +133,16 @@ namespace MasterMind
                     // Repeat do-loop for Answer Array
                     do
                     {
+                        try
+                        {
+                            y = Convert.ToInt32(Console.ReadLine());
 
-                        y = Convert.ToInt32(Console.ReadLine());
+                        }
+
+                        catch(Exception e)
+                        {
+                            Console.WriteLine("Please provide a valid input");
+                        }
 
 
 
@@ -209,22 +217,46 @@ namespace MasterMind
 
                     Console.Write("                                           ");
 
-
                     //Points DISPLAYED
                     for (int i = 1; i <= white; i++)
                     {
-                        Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.Black;
-                        Console.Write("II");
-                        Console.ResetColor();
-                        Console.Write(" ");
+
+
+                        //if(i <= 2)
+                        {
+                            Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.Black;
+                            Console.Write("II");
+                            Console.ResetColor();
+                            Console.Write(" ");
+                        }
+
+                        //else
+                        //{
+                        //    Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.Black;
+                        //    Console.WriteLine("II");
+                        //    Console.ResetColor();
+                        //    Console.Write(" ");
+                        //}
                     }
 
                     for (int i = 1; i <= pink; i++)
                     {
-                        Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.Black;
-                        Console.Write("II");
-                        Console.ResetColor();
-                        Console.Write(" ");
+                        //if (i <= 2)
+                        {
+                            Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.Black;
+                            Console.Write("II");
+                            Console.ResetColor();
+                            Console.Write(" ");
+                        }
+
+                        //else
+                        //{
+                        //    Console.BackgroundColor = ConsoleColor.Magenta; Console.ForegroundColor = ConsoleColor.Black;
+                        //    Console.WriteLine("II");
+                        //    Console.ResetColor();
+                        //    Console.Write(" ");
+                        //}
+
                     }
 
 
@@ -329,6 +361,11 @@ namespace MasterMind
                 Console.Write("         ");
 
 
+            }
+
+            void lineNumber(int i)
+            {
+                Console.WriteLine ($"--------{i}");
             }
 
 
