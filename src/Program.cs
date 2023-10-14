@@ -10,9 +10,11 @@ namespace MasterMind
     {
         static void Main(string[] args)
         {
-            Console.BufferWidth = 100;
-            Console.BufferHeight = 100;
-            Console.SetWindowSize(Console.BufferWidth, 58);
+            // Console.BufferWidth = 100;
+            // Console.BufferHeight = 100;
+            // Console.SetWindowSize(Console.BufferWidth, 58);
+
+
 
             bool playAgain = false;
 
